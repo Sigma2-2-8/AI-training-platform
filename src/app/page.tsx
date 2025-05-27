@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Brain, Zap, BarChart3, Cloud } from "lucide-react";
@@ -14,8 +15,12 @@ export default function Home() {
           </div>
           <div className="flex items-center space-x-4">
             <ThemeToggle />
-            <Button variant="outline">Войти</Button>
-            <Button>Регистрация</Button>
+            <Button variant="outline" asChild>
+              <Link href="/auth/login">Войти</Link>
+            </Button>
+            <Button asChild>
+              <Link href="/auth/register">Регистрация</Link>
+            </Button>
           </div>
         </div>
       </header>
